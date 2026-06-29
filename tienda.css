@@ -4,7 +4,7 @@ main {
     max-width: 1280px;
     margin: 0 auto;
     color: var(--texto);
-    font-family: 'Sora', sans-serif;
+    font-family: var(--fuente, 'Sora', sans-serif) !important;
 }
 
 main ul,
@@ -21,10 +21,6 @@ main textarea {
     box-sizing: border-box;
     font: inherit;
     color: inherit;
-}
-
-main button {
-    cursor: pointer;
 }
 
 main input {
@@ -73,7 +69,7 @@ main label {
 }
 
 .tarjetaServicio p {
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .tarjetaServicio button {

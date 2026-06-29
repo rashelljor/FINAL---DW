@@ -67,11 +67,24 @@ img {
 
 .botonAmarillo:hover {
     background-color: var(--celeste);
+    color: #11131b;
     font-weight: 700;
     font-size: 14px;
 }
 
 /* Navbar dropdown hover */
+.navbar .nav-item.dropdown {
+    position: relative;
+}
+
+.navbar .nav-item.dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0;
+    z-index: 1000;
+}
+
 .navbar .nav-item.dropdown:hover .dropdown-menu {
     display: block;
 }
@@ -112,7 +125,7 @@ img {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 800;
 }
 
@@ -123,7 +136,7 @@ h1 em {
 
 .subtexto {
     color: var(--gris);
-    font-size: 15px;
+    font-size: 20px;
     max-width: 500px;
 }
 
@@ -141,7 +154,7 @@ h1 em {
 
 .etiquetaGris {
     color: var(--gris);
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 700;
 }
 
@@ -151,7 +164,7 @@ h1 em {
     left: 12px;
     background-color: var(--celeste);
     color: #002a78;
-    font-size: 11px;
+    font-size: 18px;
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 4px;
@@ -179,7 +192,7 @@ section {
 }
 
 .seccionCabecera h2 {
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -221,14 +234,14 @@ section {
 }
 
 .tarjetaAtraccion h3 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 6px;
 }
 
 .tarjetaAtraccion p {
     color: var(--gris);
-    font-size: 14px;
+    font-size: 18px;
 }
 
 /* --- Tarjetas de Servicios --- */
@@ -257,13 +270,13 @@ section {
 }
 
 .tarjetaServicioTexto h3 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
 }
 
 .tarjetaServicioTexto p, .tarjetaServicioTexto ul {
     color: var(--gris);
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .tarjetaServicioTexto ul {
@@ -294,14 +307,14 @@ section {
 }
 
 .infoFila h3 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 4px;
 }
 
 .infoFila div p {
     color: var(--gris);
-    font-size: 14px;
+    font-size: 18px;
 }
 
 /* --- Bloque Contenedor de Imagen Estática del Mapa --- */
