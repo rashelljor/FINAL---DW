@@ -40,7 +40,7 @@ function pagar(indice) {
         'nombre' : reserva.nombre,
         'items'  : reserva.items,
         'total'  : reserva.total,
-        'fecha'  : new Date().toLocaleDateString('es-PE')
+        'fecha'  : reserva.fechaRegistro,
     }
     compras.push(compra)
     localStorage.setItem('compras', JSON.stringify(compras))
