@@ -77,18 +77,6 @@
                 <tbody id="cuerpoTabla"></tbody>
             </table>
         </div>
-            <div id="seccionPago" class="glass bloqueAdmin" style="display:none;">
-            <h3>Pago de reserva</h3>
-            <p>Solo se puede pagar con billetera virtual:</p>
-            <button class="botonAmarillo" onclick="elegirBilletera('YAPE')">Yape</button>
-            <button class="botonAmarillo" onclick="elegirBilletera('PLIN')">Plin</button>
-
-            <div id="datosPago" style="display:none; margin-top:16px;">
-                <p>Número de billetera: <span id="telefonoPago"></span></p>
-                <label for="codigoVerificacion">Código de verificación (6 dígitos)</label>
-                <input type="text" id="codigoVerificacion" maxlength="6" placeholder="000000" style="background-color:var(--tarjeta); border:1px solid var(--borde); border-radius:8px; color:var(--texto); padding:10px 14px;">
-            </div>
-        </div>
     </main>
 
         <footer class="bg-dark text-light">

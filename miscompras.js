@@ -17,19 +17,17 @@ function mostrarCompras() {
         })
 
         contenedor.innerHTML +=
-            '<div class="glass tarjetaInfo" style="margin-bottom:28px;">' +
+            '<div>' +
                 '<div class="infoFila">' +
-                    '<p class="em">👽</p>' +
-                    '<div>' +
-                        '<h3 class="celeste">Compra ' + ((indice + 1) < 10 ? '0' + (indice + 1) : (indice + 1)) + '</h3>' +
-                        '<p>' + compra.tipo + ' — Serie ' + compra.serie + '-' + compra.correlativo + '</p>' +
+                        '<h3">Compra ' + ((indice + 1) < 10 ? '0' + (indice + 1) : (indice + 1)) + '</h3>' +
+                        '<p>Boleta de Venta</p>' +
                     '</div>' +
                 '</div>' +
                 '<div class="infoFila">' +
                     '<p class="em">🧑‍🚀</p>' +
                     '<div>' +
-                        '<h3>' + compra.emisor + '</h3>' +
-                        '<p>RUC: ' + compra.ruc + '</p>' +
+                        '<h3> FAMILY PARK S.A.C. </h3>' +
+                        '<p>RUC: 20555297018</p>' +
                     '</div>' +
                 '</div>' +
                 '<div class="infoFila">' +
@@ -44,19 +42,12 @@ function mostrarCompras() {
                         '<ul>' + detalleItems + '</ul>' +
                     '</div>' +
                 '</div>' +
-                '<div class="infoFila" style="justify-content:space-between; align-items:center; border-top:1px solid var(--borde); padding-top:16px;">' +
-                    '<h3 class="celeste">TOTAL</h3>' +
-                    '<p class="amarillo" style="font-size:20px; font-weight:700;">' + compra.total + '</p>' +
-                '</div>' +
-                '<div class="infoFila">' +
-                    '<div>' +
-                        '<h3>Pagado con</h3>' +
-                        '<p>' + compra.billetera + '</p>' +
-                        '<p>Moneda: ' + compra.moneda + '</p>' +
+                '<div>' +
+                    '<h3>TOTAL</h3> <p>' + compra.total + '</p>' +
                     '</div>' +
                 '</div>' +
                 '<p>¡Gracias por tu preferencia! 🚀</p>' +
-            '</div>'
+            '</div> <br><hr><hr><br>'
     })
 }
 
