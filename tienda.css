@@ -3,33 +3,6 @@ main {
     padding: 40px 60px;
     max-width: 1280px;
     margin: 0 auto;
-    color: var(--texto);
-    font-family: var(--fuente, 'Sora', sans-serif) !important;
-}
-
-main ul,
-main li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-main button,
-main input,
-main select,
-main textarea {
-    box-sizing: border-box;
-    font: inherit;
-    color: inherit;
-}
-
-main input {
-    width: 100%;
-}
-
-main label {
-    display: block;
-    margin-bottom: 8px;
 }
 
 .grillaTienda {
@@ -40,19 +13,7 @@ main label {
 
 .tarjetaServicio {
     border: 1px solid var(--borde);
-    border-radius: 12px;}
-
-.tarjetaServicio {
-    border: 1px solid var(--borde);
-    border-radius: 12px;}
-
-.tarjetaServicio.promo {
-    border: 1px solid #73569c;
-}
-
-.tarjetaServicio.promo button {
-    background-color: #73569c;
-    color: #fff;
+    border-radius: 12px;
 }
 
 .tarjetaServicio img {
