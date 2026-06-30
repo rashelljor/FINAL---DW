@@ -68,5 +68,4 @@ formularioCarrito.addEventListener('submit', (e) => {
     e.preventDefault()
     guardar()
 })
-
 mostrarCarrito()

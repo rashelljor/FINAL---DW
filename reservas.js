@@ -105,5 +105,4 @@ function mostrarAlerta(mensaje, tipo = 'info') {
         setTimeout(() => alertContainer.innerHTML = '', 150)
     }, 3500)
 }
-
 mostrarReservas()

@@ -12,11 +12,6 @@
     --fuente: 'Sora', sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
 html,
 body {
@@ -26,19 +21,6 @@ body {
 body {
     background-color: var(--fondo);
     color: var(--texto);
-}
-
-a {
-    text-decoration: none;
-}
-
-button,
-input,
-select,
-textarea,
-optgroup,
-option {
-    font-family: inherit;
 }
 
 img {
