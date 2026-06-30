@@ -10,30 +10,54 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-dark">
+            <div class="container-fluid gap-3">
+                <a href="index.html"> <img src="img/logostar.png" alt="Star Park Logo" height="48"></a>
+                <ul class="navbar-nav flex-row gap-5">
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center"> 
+                            <a class="nav-link" href="index.html">Inicio</a>
+                            <button class="btn btn-link dropdown-toggle text-light"
+                                data-bs-toggle="dropdown" aria-expanded="false" aria-label="Mostrar opciones de Inicio"></button>
+                        </div>
 
-        <header>
-            <nav class="navbar navbar-dark bg-dark py-2">
-                <div class="container-fluid d-flex flex-wrap align-items-center gap-3">
-                    <a class="navbar-brand me-3" href="index.html">
-                        <img src="img/logostar.png" alt="Star Park Logo" height="48">
-                    </a>
-                    <ul class="navbar-nav d-flex flex-column flex-sm-row flex-wrap align-items-center gap-2 mb-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="admin.html">Admin</a></li>
+                        <ul class="dropdown-menu dropdown-menu-dark ">
+                            <li><a class="dropdown-item" href="index.html#atracciones">Atracciones</a></li>
+                            <li><a class="dropdown-item" href="index.html#servicios">Servicios</a></li>
+                            <li><a class="dropdown-item" href="index.html#base-operaciones">Ubicación y Horarios</a></li>
                         </ul>
-                </div>
-            </nav>
-        </header>
-
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center"> 
+                        <a class="nav-link" href="tienda.html">Tienda</a>
+                        <button type="button" class="btn btn-link dropdown-toggle dropdown-toggle-split text-light p-0 ms-1"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-label="Mostrar opciones de Tienda"></button>
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="tienda.html#promociones">Promociones</a></li>
+                            <li><a class="dropdown-item" href="tienda.html#botin">Botín Espacial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Mis Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="miscompras.html">Mis Compras</a>
+                    </li>
+                </ul>
+                <a class="btn btn-primary rounded-pill botonAmarillo" href="carrito.html">VER MI CARRITO</a>
+            </div>
+        </nav>
+    </header>
+    
     <main>
-
         <!-- Contenedor para alertas específicas de admin -->
         <div id="alertContainer" class="container mt-4"></div>
 
         <div class="seccionCabecera">
             <h2>PANEL DE RESERVAS</h2>
-            <p class="etiquetaGris">Todas las reservas registradas 📋</p>
+            <p class="etiquetaGris">🧑‍🚀 Todas las reservas registradas</p>
         </div>
 
         <div class="glass bloqueAdmin">
@@ -46,14 +70,25 @@
                         <th>Teléfono</th>
                         <th>Fecha de visita</th>
                         <th>Total</th>
-                        <th>Fecha de registro</th>
+                        <th>Fecha y hora de registro</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody id="cuerpoTabla"></tbody>
             </table>
         </div>
+            <div id="seccionPago" class="glass bloqueAdmin" style="display:none;">
+            <h3>Pago de reserva</h3>
+            <p>Solo se puede pagar con billetera virtual:</p>
+            <button class="botonAmarillo" onclick="elegirBilletera('YAPE')">Yape</button>
+            <button class="botonAmarillo" onclick="elegirBilletera('PLIN')">Plin</button>
 
+            <div id="datosPago" style="display:none; margin-top:16px;">
+                <p>Número de billetera: <span id="telefonoPago"></span></p>
+                <label for="codigoVerificacion">Código de verificación (6 dígitos)</label>
+                <input type="text" id="codigoVerificacion" maxlength="6" placeholder="000000" style="background-color:var(--tarjeta); border:1px solid var(--borde); border-radius:8px; color:var(--texto); padding:10px 14px;">
+            </div>
+        </div>
     </main>
 
         <footer class="bg-dark text-light">

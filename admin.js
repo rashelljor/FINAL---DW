@@ -22,9 +22,65 @@ function mostrarReservas() {
             + '<td>' + reserva.fecha + '</td>'
             + '<td class="amarillo">' + reserva.total + '</td>'
             + '<td>' + reserva.fechaRegistro + '</td>'
-            + '<td><button class="botonEliminar" onclick="eliminar(' + indice + ')">✕ Quitar</button></td>'
+            + '<td>'+ (reserva.pagado? '<span class="amarillo">✅ Pagado</span>': '<button class="botonEliminar" style="border-color:var(--celeste); color:var(--celeste);" onclick="pagar(' + indice + ')">💳 Pagar</button>') + ' <button class="botonEliminar" onclick="eliminar(' + indice + ')">✕ Quitar</button>' + '</td>'
             + '</tr>'
     })
+}
+
+let reservaSeleccionada  = null
+let billeteraSeleccionada = null
+
+function pagar(indice) {
+    reservaSeleccionada = indice
+    document.getElementById('seccionPago').style.display = 'block'
+    document.getElementById('datosPago').style.display = 'none'
+    document.getElementById('codigoVerificacion').value = ''
+    document.getElementById('seccionPago').scrollIntoView({ behavior: 'smooth' })
+}
+
+function elegirBilletera(tipo) {
+    billeteraSeleccionada = tipo
+    document.getElementById('telefonoPago').textContent = reservas[reservaSeleccionada].telefono
+    document.getElementById('datosPago').style.display = 'block'
+}
+
+document.getElementById('codigoVerificacion').addEventListener('input', (e) => {
+    let valor = e.target.value
+
+    if (/^\d{6}$/.test(valor)) {
+        confirmarPago()
+    }
+})
+
+function confirmarPago() {
+    let reserva = reservas[reservaSeleccionada]
+    let compras = JSON.parse(localStorage.getItem('compras')) || []
+
+    let compra = {
+        'emisor'     : 'FAMILY PARK S.A.C.',
+        'ruc'        : '20555297018',
+        'tipo'       : 'Boleta de Venta',
+        'serie'      : '01',
+        'correlativo': String(compras.length + 1).padStart(2, '0'),
+        'fecha'      : new Date().toLocaleString('es-PE', {
+            year: 'numeric', month: '2-digit', day: '2-digit',
+            hour: '2-digit', minute: '2-digit', second: '2-digit'
+        }),
+        'items'      : reserva.items,
+        'total'      : reserva.total,
+        'moneda'     : 'SOLES',
+        'billetera'  : billeteraSeleccionada
+    }
+
+    compras.push(compra)
+    localStorage.setItem('compras', JSON.stringify(compras))
+
+    reserva.pagado = true
+    localStorage.setItem('reservas', JSON.stringify(reservas))
+
+    document.getElementById('seccionPago').style.display = 'none'
+    mostrarReservas()
+    mostrarAlerta('¡Pago confirmado con ' + billeteraSeleccionada + '! Revisa "Mis Compras" 🚀', 'success')
 }
 
 function eliminar(indice) {

@@ -57,6 +57,23 @@ table tr:hover {
     background-color: rgba(255, 107, 107, 0.15);
 }
 
+.botonPagar {
+    background-color: transparent;
+    color: var(--celeste);
+    border: 1px solid var(--celeste);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--fuente);
+    margin-right: 6px;
+}
+
+.botonPagar:hover {
+    background-color: rgba(140, 227, 253, 0.15);
+}
+
 @media (max-width: 800px) {
     main {
         padding: 40px 16px;

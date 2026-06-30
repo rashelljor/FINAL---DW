@@ -42,7 +42,16 @@ function guardar() {
         'telefono'     : document.getElementById('telefono').value,
         'fecha'        : document.getElementById('fecha').value,
         'total'        : document.getElementById('totalPrecio').textContent,
-        'fechaRegistro': new Date().toLocaleDateString('es-PE')
+        'items'        : carrito,
+        'pagado'       : false,
+        'fechaRegistro': new Date().toLocaleString('es-PE', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        })
     }
 
     reservas.push(reserva)
