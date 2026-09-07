@@ -1,4 +1,4 @@
-// admin.js — Star Park
+// reservas.js — Star Park
 
 let reservas = JSON.parse(localStorage.getItem('reservas')) || []
 let cuerpo   = document.getElementById('cuerpoTabla')
